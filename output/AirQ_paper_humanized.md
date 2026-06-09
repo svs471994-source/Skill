@@ -4,9 +4,9 @@
 
 ## Abstract
 
-When policymakers in India report that a city's air quality has "improved," they are almost always describing a single number — the annual mean PM₂.₅ concentration averaged across all monitoring stations. This number smooths over a reality that is far more dangerous and unequal. Using the WHO's AirQ+ v2.2 software, we quantified PM₂.₅-attributable mortality at the level of individual monitoring stations across Bengaluru over seven years (2018–2024), drawing on validated hourly data from the city's CAAQMS network and applying Log-Linear Integrated Exposure-Response functions appropriate for high-pollution South Asian conditions.
+When policymakers in India report that a city's air quality has "improved," they are almost always describing a single number — the annual mean PM₂.₅ concentration averaged across all monitoring stations. This number smooths over a reality that is far more dangerous and unequal. Using the WHO's AirQ+ v2.2 software, this study quantified PM₂.₅-attributable mortality at the level of individual monitoring stations across Bengaluru over seven years (2018–2024), drawing on validated hourly data from the city's CAAQMS network and applying Log-Linear Integrated Exposure-Response functions appropriate for high-pollution South Asian conditions.
 
-What we found was not a city with an air quality problem. We found a city with several overlapping problems of vastly different severity. A worker living near the Peenya industrial corridor faces an Attributable Fraction of all-cause natural mortality of approximately 15.5% — nearly three times the 5.5% burden borne by a resident of Hombegowda Nagar, less than fifteen kilometres away. To characterise this inequality and track it over time, we introduce the Absolute Exposure Disparity (AED) metric: the gap between the most- and least-exposed parts of the city. That gap narrowed sharply during the 2020 COVID-19 lockdown (AED = 4.2%), then widened well beyond its pre-pandemic level by 2024 (AED = 9.1%). An Environmental Lorenz Curve analysis yielded a Pollution Gini Coefficient of 0.37, confirming that roughly 20% of the monitoring stations bear responsibility for approximately 40% of the city's aggregate health burden. City-wide averages do not just obscure this reality — they make targeted policy responses structurally impossible.
+The findings reveal not a city with a single air quality problem, but a city with several overlapping problems of vastly different severity. A worker living near the Peenya industrial corridor faces an Attributable Fraction of all-cause natural mortality of approximately 15.5% — nearly three times the 5.5% burden borne by a resident of Hombegowda Nagar, less than fifteen kilometres away. To characterise this inequality and track it over time, this study introduces the Absolute Exposure Disparity (AED) metric: the gap between the most- and least-exposed parts of the city. That gap narrowed sharply during the 2020 COVID-19 lockdown (AED = 4.2%), then widened well beyond its pre-pandemic level by 2024 (AED = 9.1%). An Environmental Lorenz Curve analysis yielded a Pollution Gini Coefficient of 0.37, confirming that roughly 20% of the monitoring stations account for approximately 40% of the city's aggregate health burden. City-wide averages do not just obscure this reality — they make targeted policy responses structurally impossible.
 
 **Keywords:** Spatiotemporal Heterogeneity; PM₂.₅; AirQ+; Absolute Exposure Disparity; Environmental Epidemiology; Urban Health Equity; Bengaluru
 
@@ -14,7 +14,7 @@ What we found was not a city with an air quality problem. We found a city with s
 
 ## 1. Introduction
 
-### 1.1 Scale, Averaging, and the Problem of the Missing Variance
+### 1.1 The Global Burden and the Methodological Challenge of Scale
 
 Ambient PM₂.₅ kills approximately 4.2 million people each year, making it the world's leading environmental health risk (GBD 2019 Risk Factors Collaborators, 2020). The mechanisms are by now well characterised: sustained inhalation of fine particles drives systemic oxidative stress, endothelial dysfunction, and the chronic pulmonary inflammation that underpins ischemic heart disease, stroke, and COPD (Brook et al., 2010). What is less well understood — or at least less well acted upon — is a methodological failure that runs through most health impact assessments conducted in the Global South.
 
@@ -22,25 +22,25 @@ The standard approach takes a single city-wide mean concentration and applies it
 
 Characterising the *variance* of urban exposure matters as much as characterising the mean. It is what turns a population-level statistic into an actionable policy map.
 
-### 1.2 Why Bengaluru
+### 1.2 Urban Morphology and Airshed Dynamics of Bengaluru
 
 Bengaluru (12.97°N, 77.59°E) is a particularly striking place to study this problem. The city's built-up area grew by over 1,000% between 1973 and 2017 (Ramachandra et al., 2017 [^1]), and its population — now roughly 13.6 million — expanded largely through unplanned densification rather than coherent zonal planning. Heavy industrial estates like Peenya sit alongside dense residential neighbourhoods in a pattern that bears no resemblance to the concentric rings of Western post-industrial cities. The land-use map looks, in places, almost random.
 
 Meteorology compounds this spatial complexity. For much of the year, Bengaluru's elevation (approximately 920 m above sea level) and ventilation conditions are relatively favourable. But during post-monsoon and winter months, a shallow planetary boundary layer creates temperature inversions that trap pollutants at ground level — a "valley tank" effect that concentrates emissions from nearby point sources directly in the breathing zone (Sahu et al., 2020 [^2]). The result is a patchwork of micro-climates, each with its own chronic exposure burden. India's National Clean Air Programme, however, continues to set city-average reduction targets — a 30% cut in PM₁₀ by 2024 — without any reference to where within the city that reduction should be concentrated.
 
-### 1.3 From Justice to Measurement: The AED Framework
+### 1.3 Theoretical Framework: From Environmental Justice to Exposure Disparity
 
-Environmental inequality in Indian cities is often framed in the language of social justice. That framing matters, but it does not by itself produce measurable, time-trackable policy targets. For that, we need a metric. Harper and Lynch (2005), working in social epidemiology, operationalised the concept of Absolute Exposure Disparity as the arithmetic difference in health outcomes between the most- and least-exposed population groups. Adapted here for air pollution, AED gives us a single number that describes the size of the health gap between Bengaluru's industrial and residential zones — and allows us to track whether that gap is closing or widening year on year.
+Environmental inequality in Indian cities is often framed in the language of social justice. That framing matters, but it does not by itself produce measurable, time-trackable policy targets. A quantitative metric is needed. Harper and Lynch (2005), working in social epidemiology, operationalised the concept of Absolute Exposure Disparity as the arithmetic difference in health outcomes between the most- and least-exposed population groups. Adapted here for air pollution, AED provides a single number that describes the size of the health gap between Bengaluru's industrial and residential zones — and enables longitudinal tracking of whether that gap is closing or widening year on year.
 
 This is directly relevant to the "Double Jeopardy" hypothesis: the observation that communities of lower socioeconomic status tend to cluster in high-emission zones while simultaneously carrying higher baseline disease burdens, so they bear a disproportionate share of the pollution penalty (Morello-Frosch et al., 2011 [^3]). AED gives that hypothesis a measurable form.
 
-### 1.4 The Case for Non-Linear Modelling
+### 1.4 Methodological Rationale: Non-Linear Integrated Exposure-Response Functions
 
 Earlier health assessments of Bengaluru's air quality relied on linear concentration-response functions. In European cities, where annual mean PM₂.₅ concentrations typically stay below 20 μg/m³, linear models are a reasonable approximation. In South Asian megacities, where annual means routinely exceed 50 μg/m³, they are not. The dose–response relationship flattens at high concentrations — the IER curve becomes supralinear — so linear models overstate the health gains from marginal pollution reductions at the top of the exposure range (Burnett et al., 2014).
 
 We used AirQ+ v2.2, the WHO's specialised health impact tool, which integrates Log-Linear Integrated Exposure-Response functions synthesised from ambient, household, and smoking exposure data across the full global concentration range (Burnett et al., 2014; WHO, 2020). For a city like Bengaluru, this choice is not a refinement — it is a precondition for obtaining plausible estimates.
 
-### 1.5 Study Objectives
+### 1.5 Research Objectives
 
 Three questions drove this analysis:
 
@@ -52,13 +52,13 @@ Three questions drove this analysis:
 
 ## 2. Methodology
 
-### 2.1 Study Design and Setting
+### 2.1 Study Area and Longitudinal Design
 
 We conducted a retrospective longitudinal analysis of Bengaluru Urban District (approximately 709 km²) covering 84 months from January 2018 to December 2024. The timeframe was chosen deliberately to straddle three structurally different phases: a pre-pandemic baseline (2018–2019) when emissions were relatively stable; the "anthropogenic hiatus" of 2020, when national lockdown measures dramatically curtailed vehicular and industrial activity; and the recovery period (2022–2024), when economic activity resumed and expanded.
 
-Rather than treating the city as a single unit, we mapped each CAAQMS monitoring station to its dominant land-use typology. Industrial stations (Peenya, Bapuji Nagar, Silk Board) sit within or adjacent to heavy manufacturing and logistics zones. Traffic-Transition stations (City Railway, Saneguru, Hebbal, Mysore Road) are exposed primarily to high-density vehicular corridors. Residential Background stations (Hombegowda, Jayanagar, Kaval Byrasandra) represent lower-emission neighbourhoods with mature green cover and greater setback from major sources.
+Rather than treating the city as a single unit, each CAAQMS monitoring station was mapped to its dominant land-use typology. Industrial stations (Peenya, Bapuji Nagar, Silk Board) sit within or adjacent to heavy manufacturing and logistics zones. Traffic-Transition stations (City Railway, Saneguru, Hebbal, Mysore Road) are exposed primarily to high-density vehicular corridors. Residential Background stations (Hombegowda, Jayanagar, Kaval Byrasandra) represent lower-emission neighbourhoods with mature green cover and greater setback from major sources.
 
-### 2.2 Data and Quality Control
+### 2.2 Data Acquisition and Quality Assurance (QA/QC)
 
 Hourly PM₂.₅ mass concentrations came from the CPCB and KSPCB CAAQMS network — stations equipped with Beta Attenuation Monitoring (BAM) or Tapered Element Oscillating Microbalance (TEOM) instruments, both of which are federally recognised reference methods for particulate monitoring in India.
 
@@ -66,13 +66,13 @@ Before any analysis, the data went through a three-stage screening protocol. Sta
 
 Annual means, not seasonal peaks, served as the primary input to the health model. This choice is deliberately conservative: it avoids attributing chronic-exposure mortality risk to the acute, meteorology-driven spikes that occur when winter inversions trap pollutants below 500 m (Guttikunda & Goel, 2013). The resulting burden estimates reflect long-term structural exposure, not worst-case weather events.
 
-### 2.3 The AirQ+ Model
+### 2.3 AirQ+ Modelling Architecture
 
 AirQ+ v2.2 calculates station-specific Attributable Fractions using a Log-Linear IER function:
 
 $$AF = 1 - e^{-\beta(C - C_0)}$$
 
-The three parameters carry specific choices that we made deliberately:
+The three parameters reflect specific methodological choices made deliberately:
 
 **β** is the slope of the concentration–response function for all-cause natural mortality in adults aged 30 and over. We used the WHO HRAPIE recommendation: a Relative Risk of 1.062 per 10 μg/m³ increase in annual PM₂.₅ (95% CI: 1.04–1.08), derived from global cohort meta-analyses (Henschel & Chan, 2013).
 
@@ -80,11 +80,11 @@ The three parameters carry specific choices that we made deliberately:
 
 **C₀** is the counterfactual — the theoretical minimum risk exposure level. We set this at the WHO Air Quality Guideline of 5 μg/m³ (WHO, 2021), not India's more permissive NAAQS limit of 40 μg/m³. Using the stricter WHO figure means the burden estimates represent the gap between actual exposure and a biologically grounded standard, not merely a regulatory compliance benchmark.
 
-### 2.4 Population and Baseline Health Parameters
+### 2.4 Epidemiological Input Parameters
 
 Ward-level population data are unavailable for the full 2018–2024 period, so district-level population was estimated annually by applying a 3.4% Compound Annual Growth Rate to the 2011 Census baseline of 8.4 million. The Baseline Incidence rate for all-cause natural mortality — 600 per 100,000 per year — was taken from the 2022 Sample Registration System report for urban Karnataka (SRS, 2022), grounding the model in local data rather than global defaults.
 
-### 2.5 Measuring Inequality: AED and the Lorenz Curve
+### 2.5 Statistical Analysis of Inequality
 
 **Absolute Exposure Disparity (AED)** was calculated following Harper and Lynch (2005) as the annual difference between the 90th and 10th percentile station-level Attributable Fractions:
 
@@ -96,19 +96,19 @@ A rising AED means the health gap between the city's most- and least-polluted zo
 
 ### 2.6 Sensitivity Analysis
 
-To bound the uncertainty in our estimates, we re-ran all calculations at both the lower (RR = 1.04) and upper (RR = 1.08) bounds of the HRAPIE 95% confidence interval for the β parameter. The inequality gradients and temporal trends we report are consistent across all three scenarios.
+To bound the uncertainty in the mortality estimates, all calculations were re-run at both the lower (RR = 1.04) and upper (RR = 1.08) bounds of the HRAPIE 95% confidence interval for the β parameter. The inequality gradients and temporal trends reported here are consistent across all three scenarios.
 
 ---
 
 ## 3. Results
 
-### 3.1 Who Bears the Burden? The 2024 Station-Level Picture
+### 3.1 Station-Level Stratification of Mortality Risk (2024)
 
 The most immediate finding is simply how unequal the distribution is. Across the ten monitoring stations, the 2024 Attributable Fractions range from 4.8% to 15.5% — a spread of over ten percentage points within a single city (**Figure 2**, **Table 1**).
 
 At one end, **Peenya** — Bengaluru's largest industrial zone, dense with MSMEs and heavy vehicle depots — recorded an AF of 15.5%. Nearby **Bapuji Nagar** (14.1%) and **Silk Board** (13.0%) are similarly burdened. At the other end, **Hombegowda Nagar** (5.5%) and **Jayanagar** (5.1%) benefit from older tree cover and meaningful distance from major emission sources. The Risk Ratio between the highest and lowest stations is 2.78 — a long-term resident of Peenya carries nearly three times the PM₂.₅-attributable mortality burden of a Hombegowda resident breathing the same city's air.
 
-The standard deviation of AFs across stations (σ = 3.4% in 2024) is substantially higher than what comparable studies find in European airsheds, confirming that Bengaluru does not simply have elevated pollution — it has structurally fragmented pollution, distributed very differently depending on where you live (Gao et al., 2018 [^4]; Chowdhury et al., 2019 [^5]).
+The standard deviation of AFs across stations (σ = 3.4% in 2024) is substantially higher than what comparable studies find in European airsheds, confirming that Bengaluru does not simply have elevated pollution — it has structurally fragmented pollution, distributed very differently depending on residential location (Gao et al., 2018 [^4]; Chowdhury et al., 2019 [^5]).
 
 ---
 
@@ -135,7 +135,7 @@ The standard deviation of AFs across stations (σ = 3.4% in 2024) is substantial
 
 ---
 
-### 3.2 Seven Years of Inequality: Three Phases
+### 3.2 Temporal Evolution of Absolute Exposure Disparity
 
 The longitudinal picture is more alarming than the 2024 snapshot alone. Plotting the AED from 2018 to 2024 (**Figure 3**) reveals three structurally distinct phases.
 
@@ -151,7 +151,7 @@ The longitudinal picture is more alarming than the 2024 snapshot alone. Plotting
 
 ---
 
-### 3.3 The Lorenz Curve: Putting a Number on Concentration
+### 3.3 Distributional Concentration: The Lorenz Analysis
 
 The Environmental Lorenz Curve (**Figure 1**) approaches the inequality question from a different direction. Rather than tracking the gap between extremes over time, it asks how concentrated the total health burden is across the monitoring network at any given point.
 
@@ -165,11 +165,11 @@ In a perfectly equitable city, each successive percentile of stations would cont
 
 A Gini coefficient of 0.37 means city-wide policy planning built on spatial uniformity is not just imprecise — it is operating on a false premise.
 
-### 3.4 The Full Picture: A Spatiotemporal Risk Matrix
+### 3.4 Spatiotemporal Risk Matrix
 
 **Figure 4** lays out all ten stations across all seven years in a single heat map, assigning colour by annual AF value. Taken together, several patterns stand out.
 
-The industrial stations — Peenya, Bapuji Nagar, Silk Board — have remained deep red for five of the seven study years. This is not a recent deterioration; the elevated burden was present from 2018. The 2020 column shows a consistent system-wide cooling across all typologies, confirming the broad anthropogenic suppression we described above. And the transition-zone stations (City Railway, Saneguru, Hebbal, Mysore Road) show a distinctly more volatile profile than either the industrial or residential groups — their AFs fluctuate more year-on-year, tracking vehicular traffic demand rather than the slower rhythms of industrial output. That volatility is actually a policy asset: it implies that traffic demand management interventions could yield comparatively rapid and measurable health gains at these locations.
+The industrial stations — Peenya, Bapuji Nagar, Silk Board — have remained deep red for five of the seven study years. This is not a recent deterioration; the elevated burden was present from 2018. The 2020 column shows a consistent system-wide cooling across all typologies, confirming the broad anthropogenic suppression described in Section 3.2. The transition-zone stations (City Railway, Saneguru, Hebbal, Mysore Road) show a distinctly more volatile profile than either the industrial or residential groups — their AFs fluctuate more year-on-year, tracking vehicular traffic demand rather than the slower rhythms of industrial output. That volatility is actually a policy asset: it implies that traffic demand management interventions could yield comparatively rapid and measurable health gains at these locations.
 
 ---
 
@@ -177,7 +177,7 @@ The industrial stations — Peenya, Bapuji Nagar, Silk Board — have remained d
 
 ---
 
-### 3.5 Distributional Tails: The 2020 vs. 2024 Comparison
+### 3.5 Statistical Deviation and the Heavy-Tail Distribution (2020 vs. 2024)
 
 Comparing the kernel density distributions of station-level exposure ratios (each station's AF divided by the city mean) for 2020 and 2024 (**Figure 5**) makes the rebound visible in its starkest form.
 
@@ -193,13 +193,13 @@ This tail is exactly what gets lost when policy relies on the city-wide average.
 
 ## 4. Discussion
 
-### 4.1 What the 2.78 Risk Ratio Actually Means for HIAs
+### 4.1 Implications of Spatial Heterogeneity for Health Impact Assessment
 
 A Risk Ratio of 2.78 between Peenya and Hombegowda is not just a statistic about two monitoring stations. It means that a conventional HIA applying a single city-wide mean to the full population would underestimate PM₂.₅-related mortality in the industrial zones by nearly a factor of three. Similar intra-urban gradients have been documented in other rapidly growing Asian megacities (Gao et al., 2018 [^4]; Chowdhury et al., 2019 [^5]), but the methodological consequences are rarely drawn out fully.
 
 There is also a biological dimension to this that the numbers do not immediately convey. Residents of Peenya are not simply exposed to more pollution — they are operating in the supralinear region of the IER curve, where the dose-response relationship has already flattened. Marginal pollution reductions produce smaller per-unit health gains at high baseline concentrations than at low ones (Burnett et al., 2014). This means generic, incremental emission controls will deliver less health benefit per unit of abatement in industrial hotspots than the same controls would deliver in residential zones. You need step-change reductions in source-specific emissions at Peenya to move the needle; a 10% general improvement across the airshed will barely register there.
 
-### 4.2 Reading the Lockdown as Evidence
+### 4.2 Interpreting the Post-Pandemic Rebound of Exposure Disparity
 
 The 2020 contraction of the AED from 7.5% to 4.2% offers something that longitudinal observational studies rarely get: a near-controlled experiment. The lockdown effectively switched off most of Bengaluru's industrial and vehicular activity within days. The result was a 35% drop in PM₂.₅ at industrial stations and only a 12% drop at residential ones — an asymmetric response that could only arise if the industrial gradient was being generated by industrial and transport sources, not by terrain or prevailing wind.
 
@@ -207,9 +207,9 @@ Meteorology cannot explain a gradient that disappears when factories close.
 
 By 2024, the AED reached 9.1%, surpassing its 2019 baseline by 1.2 percentage points. This is consistent with global rebound effects documented after other economic recovery periods (Sharma et al., 2020): once restrictions lifted, heavy industries and private vehicle use did not simply return to pre-pandemic levels — they exceeded them. The pollution penalty of that recovery was concentrated in the zones that were already carrying the heaviest burden, consistent with the Double Jeopardy framing of Morello-Frosch et al. (2011 [^3]).
 
-### 4.3 Policy That Matches the Problem
+### 4.3 Policy Recommendations: Towards Spatially Targeted Interventions
 
-The risk matrix tells a six-year story that is difficult to ignore: Peenya, Bapuji Nagar, and Silk Board have been deep red in five of seven study years. Whatever policies have been in force during this period — and the NCAP's targets apply to Bengaluru — they have not dented the hotspot problem. Generic measures, applied uniformly across a heterogeneous airshed, dilute limited enforcement resources. Based on the Lorenz Curve finding that 20% of stations drive 40% of the aggregate burden, we propose three targeted interventions:
+The risk matrix tells a six-year story that is difficult to ignore: Peenya, Bapuji Nagar, and Silk Board have been deep red in five of seven study years. Whatever policies have been in force during this period — and the NCAP's targets apply to Bengaluru — they have not dented the hotspot problem. Generic measures, applied uniformly across a heterogeneous airshed, dilute limited enforcement resources. Based on the Lorenz Curve finding that 20% of stations drive 40% of the aggregate burden, three targeted interventions are proposed:
 
 **Low Emission Zones.** Legally binding LEZs in Peenya, Bapuji Nagar, and Whitefield, with time-differentiated Heavy Duty Vehicle restrictions during the 22:00–06:00 window — precisely when the shallow nocturnal boundary layer reduces dispersion capacity and pollutant concentrations at ground level are highest.
 
@@ -217,7 +217,7 @@ The risk matrix tells a six-year story that is difficult to ignore: Peenya, Bapu
 
 **Targeted Network Expansion.** Several peri-urban transition zones show rapidly rising AF trajectories between 2022 and 2024, yet remain outside the current monitoring network. Without sensors there, the regulatory system cannot see the problem forming. Strategic deployment of additional CAAQMS nodes in these emerging hotspots would close that gap before the burden becomes structural.
 
-### 4.4 What the Analysis Can and Cannot Tell Us
+### 4.4 Methodological Strengths and Limitations
 
 Three limitations bear directly on how these estimates should be interpreted. First, we assumed a spatially uniform baseline mortality rate of 600 per 100,000 across all wards. If, as Jerrett et al. (2005) showed for Los Angeles, higher-pollution zones also tend to have higher baseline mortality rates — through socioeconomic pathways and effect modification — then our estimates for the industrial zones are conservative. The true burden there may be higher than we report.
 
@@ -231,7 +231,7 @@ These are not arguments against the analysis — they are arguments for finer-gr
 
 ## 5. Conclusion
 
-### 5.1 The Averaging Fallacy as a Policy Problem
+### 5.1 Synthesis of Findings: The Failure of the Aggregate Mean
 
 Seven years of station-level data from Bengaluru make one thing clear: the air pollution crisis in this city is not one crisis — it is many simultaneous, localised crises of sharply different severity. An industrial zone bearing a 15.5% mortality AF and a residential background zone bearing 4.8% are experiencing categorically different problems, and they require categorically different responses.
 
@@ -239,7 +239,7 @@ City-wide averaging does not just miss this nuance — it actively obstructs the
 
 The trajectory from 2018 to 2024 is not reassuring. The pre-pandemic gradient was already steep. The lockdown proved that it is human activity — not immutable geography — that produces it. And the post-pandemic rebound has widened it to its highest observed value, suggesting that the economic recovery period has proceeded without meaningful environmental safeguards in the zones that most need them.
 
-### 5.2 Towards a Spatially Honest Policy Framework
+### 5.2 Policy Imperatives: From Compliance to Equity
 
 We propose three shifts in how urban air quality is governed in heterogeneous South Asian megacities:
 
