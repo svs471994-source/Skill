@@ -15,7 +15,7 @@ BLUE = '0000FF'
 wb = Workbook()
 
 # ---------------- design ----------------
-TRT = [('Control', 0), ('Control', 150), ('IS-06', 0), ('IS-06', 150), ('IS-05', 0), ('IS-05', 150), ('C4-5', 0), ('C4-5', 150)]
+TRT = [(i, s) for i in ('Control', 'IS-06', 'IS-05', 'C4-5') for s in (0, 50, 100, 150)]
 REPS = 4
 random.seed(2026)
 pots = []
@@ -91,7 +91,7 @@ def blank_guard(cells, expr):
 # ---------------- 0 README ----------------
 ws = wb.active; ws.title = 'README'
 title(ws, 'Data-recording workbook: Option A (full mechanistic trial) and Option B (minimum add-on)',
-      'Rice cv. IR-64 | endophyte treatments Control, IS-06, IS-05, C4-5 | NaCl 0 and 150 mM | 4 replicate pots each (32 pots)')
+      'Rice cv. IR-64 | endophyte treatments Control, IS-06, IS-05, C4-5 | NaCl 0, 50, 100 and 150 mM (same 4-tier format as the first trial) | 4 replicate pots each (64 pots)')
 rows = [
  ('HOW TO USE', ''),
  ('Yellow cells', 'Enter your raw readings here (one row per pot; enter the mean of the 3 plants in the pot unless the column says otherwise).'),
@@ -102,7 +102,7 @@ rows = [
  ('', ''),
  ('WHICH SHEETS TO USE', ''),
  ('Option A (full)', 'Layout, A1_Growth_Intervals, A2_Growth_Harvest, A3_Pigments, A4_Osmo_Oxidative, A5_Enzymes, A6_Ions, A7_GasExchange (optional), Std_Curves, Summary.'),
- ('Option B (minimum)', 'Layout, B_Minimal, Std_Curves (proline block), Summary. Same 32 pots; B is a subset of A, so if you run A you do not need B separately.'),
+ ('Option B (minimum)', 'Layout, B_Minimal, Std_Curves (proline block), Summary. Same 64 pots; B is a subset of A, so if you run A you do not need B separately.'),
  ('Instruments', 'See sheet "Instruments": what the progress report confirms you have, and what you must confirm or outsource.'),
  ('Timeline', 'See sheet "Timeline" for the day-by-day plan (about 45 days in the polyhouse + 2-3 weeks of lab assays).'),
  ('', ''),
@@ -159,7 +159,7 @@ ws.cell(len(data) + 6, 1, 'Method references are given for planning; DOIs will b
 
 # ---------------- Layout ----------------
 ws = wb.create_sheet('Layout')
-title(ws, 'Pot layout: 4 inoculation treatments x 2 NaCl levels x 4 replicates = 32 pots (CRD)',
+title(ws, 'Pot layout: 4 inoculation treatments x 4 NaCl levels (0, 50, 100, 150 mM) x 4 replicates = 64 pots (CRD)',
       'Fill the yellow cells on the day of each event. Bench positions randomized with seed 2026.')
 hdr = ['Pot ID', 'Treatment', 'Inoculant', 'NaCl (mM)', 'Rep', 'Bench position', 'Sowing date', 'Seeds sown', 'Seedlings emerged (7 DAS)', 'Emergence %', 'Plants after thinning', 'Plants surviving at harvest', 'Survival %', 'Notes']
 for j, h in enumerate(hdr, 1):
@@ -332,7 +332,7 @@ table(ws, 4, groups, lambda p: {}, ex)
 # ---------------- B minimal ----------------
 ws = wb.create_sheet('B_Minimal')
 title(ws, 'Option B | Minimum add-on: shoot/root dry weight, MDA, proline, leaf and root Na+/K+',
-      'Same 32 pots and harvest day as Option A. Proline standard curve from Std_Curves.')
+      'Same 64 pots and harvest day as Option A. Proline standard curve from Std_Curves.')
 groups = [('Design', ID),
  ('Biomass', [('Shoot DW (g)', 'in', None, '70 °C, 72 h'), ('Root DW (g)', 'in', None, None),
               ('Root/shoot ratio', 'f', blank_guard(['Shoot DW (g)', 'Root DW (g)'], '{Root_DW_g}/{Shoot_DW_g}'), None)]),
@@ -382,11 +382,11 @@ sm.freeze_panes = 'B5'
 tl = wb.create_sheet('Timeline')
 title(tl, 'Timeline (both options; Option B skips the rows marked A only)', 'Enter actual dates in the yellow column.')
 steps = [
- ('-7 to -1', 'A, B', 'Revive IS-05, IS-06 (and IS-04 for C4-5) on nutrient agar; purity check; prepare potting mix (soil:cocopeat 1:2), sterilize, fill 32 pots of 2.5 kg'),
+ ('-7 to -1', 'A, B', 'Revive IS-05, IS-06 (and IS-04 for C4-5) on nutrient agar; purity check; prepare potting mix (soil:cocopeat 1:2), sterilize, fill 64 pots of 2.5 kg'),
  ('0', 'A, B', 'Surface-sterilize IR-64 seeds; bacterize 30 min (~10^8 CFU/mL; check by plate count); sow 10 seeds per pot; record in Layout'),
  ('7', 'A, B', 'Count emergence (Layout)'),
  ('10', 'A, B', 'Thin to 3 uniform plants per pot'),
- ('15', 'A, B', 'START NaCl irrigation (record exact date). 150 mM: 500 mL on alternate days; 0 mM pots get the same volume of water. Heights and leaf counts (A1)'),
+ ('15', 'A, B', 'START NaCl irrigation (record exact date). 50, 100 and 150 mM NaCl (2.922, 5.844 and 8.766 g/L): 500 mL on alternate days for 30 days; 0 mM pots get the same volume of water. Heights and leaf counts (A1)'),
  ('25, 35', 'A only', 'Heights and leaf counts (A1)'),
  ('40-44', 'A only', 'Gas exchange and Fv/Fm, 09:00-11:00 h (A7), if instruments available'),
  ('45 (harvest, morning)', 'A, B', 'Heights and leaf counts (A1); sample leaves for RWC, electrolyte leakage, pigments, MDA, H2O2, proline, sugars, protein, enzymes (keep on ice); uproot and wash roots'),
