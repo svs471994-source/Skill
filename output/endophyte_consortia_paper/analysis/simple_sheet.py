@@ -8,7 +8,7 @@ YEL = PatternFill('solid', fgColor='FFF2CC'); HDR = PatternFill('solid', fgColor
 thin = Side(style='thin', color='999999'); BOX = Border(left=thin, right=thin, top=thin, bottom=thin)
 def ft(b=False, i=False): return Font(name=F, bold=b, italic=i, size=11)
 
-INOC = ['Control', 'IS-06', 'IS-05', 'C4-5']; SAL = [0, 50, 100, 150]; REPS = 4
+INOC = ['Control', 'IS-06', 'IS-05', 'C1-3', 'C1-5', 'C2-3', 'C2-5', 'C4-5']; SAL = [0, 50, 100, 150]; REPS = 4
 rows = [(i, s, r) for i in INOC for s in SAL for r in range(1, REPS + 1)]
 random.seed(2026); pos = list(range(1, len(rows) + 1)); random.shuffle(pos)
 
@@ -39,7 +39,7 @@ idx = {h: i + 1 for i, (h, _) in enumerate(COLS)}
 wb = Workbook()
 # ---------- Sheet 1: Data ----------
 ws = wb.active; ws.title = 'Data'
-ws['A1'] = 'Rice cv. IR-64 | Endophyte inoculation × NaCl | 4 treatments × 4 NaCl levels × 4 replicates = 64 pots | Harvest at 45 DAS'
+ws['A1'] = 'Rice cv. IR-64 | Endophyte inoculation × NaCl | 8 treatments (Control, IS-06, IS-05, consortia C1-3, C1-5, C2-3, C2-5, C4-5) × 4 NaCl levels × 4 replicates = 128 pots | Harvest at 45 DAS'
 ws['A1'].font = ft(True)
 ws['A2'] = 'Fill the shaded cells (one row per pot; mean of the 3 plants in the pot). Leave a cell blank if not measured. Grey columns calculate automatically.'
 ws['A2'].font = ft(i=True)
