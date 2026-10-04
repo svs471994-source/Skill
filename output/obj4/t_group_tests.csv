@@ -1,0 +1,37 @@
+factor,outcome,H,df,p,eps2,p_holm,sig_raw,sig_holm
+Green-space class,Usage & access,28.6249,6,0.0001,0.0772,0.0026,True,True
+Green-space class,Environmental perception,15.9134,6,0.0142,0.0338,0.4552,True,False
+Green-space class,Vegetation & climate awareness,11.752,6,0.0677,0.0196,1.0,False,False
+Green-space class,Soil & ecological function,8.3296,6,0.2149,0.008,1.0,False,False
+Green-space class,Governance & management,5.8362,6,0.4418,-0.0006,1.0,False,False
+Green-space class,GSPI,10.8577,6,0.0929,0.0166,1.0,False,False
+Length of residence,Usage & access,0.165,3,0.983,-0.0096,1.0,False,False
+Length of residence,Environmental perception,6.0008,3,0.1116,0.0101,1.0,False,False
+Length of residence,Vegetation & climate awareness,10.9287,3,0.0121,0.0268,0.3999,True,False
+Length of residence,Soil & ecological function,9.0514,3,0.0286,0.0204,0.8584,True,False
+Length of residence,Governance & management,17.8393,3,0.0005,0.0501,0.0166,True,True
+Length of residence,GSPI,12.0937,3,0.0071,0.0307,0.2403,True,False
+Education,Usage & access,0.8032,3,0.8487,-0.0074,1.0,False,False
+Education,Environmental perception,1.0899,3,0.7795,-0.0065,1.0,False,False
+Education,Vegetation & climate awareness,10.2324,3,0.0167,0.0244,0.5174,True,False
+Education,Soil & ecological function,4.0836,3,0.2526,0.0037,1.0,False,False
+Education,Governance & management,0.8325,3,0.8417,-0.0073,1.0,False,False
+Education,GSPI,2.7139,3,0.4379,-0.001,1.0,False,False
+Age,Usage & access,6.9327,4,0.1395,0.0099,1.0,False,False
+Age,Environmental perception,1.9713,4,0.741,-0.0069,1.0,False,False
+Age,Vegetation & climate awareness,1.3419,4,0.8542,-0.009,1.0,False,False
+Age,Soil & ecological function,4.1363,4,0.3879,0.0005,1.0,False,False
+Age,Governance & management,3.7446,4,0.4417,-0.0009,1.0,False,False
+Age,GSPI,1.8669,4,0.7602,-0.0072,1.0,False,False
+Occupation,Usage & access,1.9264,4,0.7493,-0.007,1.0,False,False
+Occupation,Environmental perception,0.6656,4,0.9555,-0.0113,1.0,False,False
+Occupation,Vegetation & climate awareness,2.6368,4,0.6203,-0.0046,1.0,False,False
+Occupation,Soil & ecological function,0.9613,4,0.9156,-0.0103,1.0,False,False
+Occupation,Governance & management,4.1168,4,0.3904,0.0004,1.0,False,False
+Occupation,GSPI,1.4013,4,0.844,-0.0088,1.0,False,False
+Gender,Usage & access,0.6962,1,0.4041,-0.001,1.0,False,False
+Gender,Environmental perception,1.3101,1,0.2524,0.001,1.0,False,False
+Gender,Vegetation & climate awareness,0.9378,1,0.3328,-0.0002,1.0,False,False
+Gender,Soil & ecological function,0.0044,1,0.9473,-0.0033,1.0,False,False
+Gender,Governance & management,1.4321,1,0.2314,0.0015,1.0,False,False
+Gender,GSPI,0.0001,1,0.9919,-0.0034,1.0,False,False

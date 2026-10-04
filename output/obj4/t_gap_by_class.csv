@@ -1,0 +1,8 @@
+class,n,gap,lo,hi,p_wilcoxon,p_holm
+I Urban forest,30,11.528,5.417,17.361,0.002,0.01
+II Managed parks,84,4.514,0.496,8.532,0.031,0.062
+III Institutional,24,7.118,-0.347,14.757,0.106,0.106
+IV Lake-riparian,42,9.524,5.357,13.69,0.0,0.002
+V Grassland/scrub,18,10.185,3.704,15.972,0.016,0.047
+VI Neighbourhood,78,6.464,2.404,10.363,0.001,0.005
+VII Avenue,24,9.201,3.125,15.451,0.01,0.042

@@ -1,0 +1,664 @@
+{
+ "N": 300,
+ "profile": {
+  "Age": {
+   "36-45": 60,
+   "Above 60": 60,
+   "46-60": 60,
+   "26-35": 60,
+   "18-25": 60
+  },
+  "Gender": {
+   "Male": 180,
+   "Female": 120
+  },
+  "Education": {
+   "Postgraduate": 75,
+   "Secondary or below": 75,
+   "Undergraduate": 75,
+   "Doctoral": 75
+  },
+  "Occupation": {
+   "Retired": 60,
+   "Private sector": 60,
+   "Student": 60,
+   "Self-employed": 60,
+   "Public sector": 60
+  },
+  "Residence": {
+   ">10 years": 159,
+   "6-10 years": 84,
+   "1-5 years": 42,
+   "<1 year": 15
+  },
+  "GreenType": {
+   "Class II Managed Parks": 84,
+   "Class VI Neighborhood": 78,
+   "Class IV Lake-Riparian": 42,
+   "Class I Urban Forest": 30,
+   "Class III Institutional": 24,
+   "Class VII Avenue Plantations": 24,
+   "Class V Grassland/Scrubland": 18
+  }
+ },
+ "indexes": [
+  {
+   "index": "Usage & access",
+   "mean100": 67.45,
+   "ci_lo": 65.15,
+   "ci_hi": 69.7,
+   "sd100": 20.33,
+   "median100": 70.0,
+   "mean15": 3.7
+  },
+  {
+   "index": "Environmental perception",
+   "mean100": 73.01,
+   "ci_lo": 71.19,
+   "ci_hi": 74.88,
+   "sd100": 16.69,
+   "median100": 75.0,
+   "mean15": 3.92
+  },
+  {
+   "index": "Vegetation & climate awareness",
+   "mean100": 68.94,
+   "ci_lo": 66.83,
+   "ci_hi": 70.97,
+   "sd100": 18.44,
+   "median100": 70.83,
+   "mean15": 3.76
+  },
+  {
+   "index": "Soil & ecological function",
+   "mean100": 65.67,
+   "ci_lo": 63.58,
+   "ci_hi": 67.75,
+   "sd100": 18.01,
+   "median100": 66.67,
+   "mean15": 3.63
+  },
+  {
+   "index": "Governance & management",
+   "mean100": 60.32,
+   "ci_lo": 58.06,
+   "ci_hi": 62.58,
+   "sd100": 20.32,
+   "median100": 58.33,
+   "mean15": 3.41
+  },
+  {
+   "index": "GSPI",
+   "mean100": 67.08,
+   "ci_lo": 65.46,
+   "ci_hi": 68.67,
+   "sd100": 14.18,
+   "median100": 67.83,
+   "mean15": 3.68
+  }
+ ],
+ "alpha": {
+  "Usage & access": 0.843,
+  "Environmental perception": 0.798,
+  "Vegetation & climate awareness": 0.84,
+  "Soil & ecological function": 0.824,
+  "Governance & management": 0.858,
+  "all29": 0.924
+ },
+ "kmo": 0.928,
+ "bartlett": {
+  "chi2": 3525.9,
+  "p": 0.0,
+  "df": 406
+ },
+ "eigenvalues": [
+  9.37,
+  2.47,
+  1.67,
+  1.63,
+  1.21,
+  0.88,
+  0.76,
+  0.76
+ ],
+ "parallel_95": [
+  1.71,
+  1.6,
+  1.52,
+  1.46,
+  1.4,
+  1.35,
+  1.3,
+  1.26
+ ],
+ "n_factors_parallel": 4,
+ "harman_first_pct": 32.3,
+ "efa_var_explained_pct": 56.4,
+ "efa_crossloadings_ge_0.40": 0,
+ "efa_primary_matches_design": true,
+ "cfa": {
+  "chi2": 406.1,
+  "df": 367,
+  "chi2_df": 1.11,
+  "CFI": 0.988,
+  "TLI": 0.987,
+  "RMSEA": 0.019,
+  "SRMR": 0.04,
+  "converged": true
+ },
+ "cfa_single_factor": {
+  "chi2": 1312.8,
+  "df": 377,
+  "CFI": 0.712,
+  "RMSEA": 0.091
+ },
+ "cfa_delta_chi2": {
+  "delta": 906.7,
+  "df": 10
+ },
+ "reliability": [
+  {
+   "dimension": "Usage & access",
+   "k": 5,
+   "alpha": 0.843,
+   "omega": 0.843,
+   "AVE": 0.518,
+   "min_loading": 0.689,
+   "max_loading": 0.745
+  },
+  {
+   "dimension": "Environmental perception",
+   "k": 6,
+   "alpha": 0.798,
+   "omega": 0.798,
+   "AVE": 0.397,
+   "min_loading": 0.58,
+   "max_loading": 0.692
+  },
+  {
+   "dimension": "Vegetation & climate awareness",
+   "k": 6,
+   "alpha": 0.84,
+   "omega": 0.84,
+   "AVE": 0.468,
+   "min_loading": 0.656,
+   "max_loading": 0.75
+  },
+  {
+   "dimension": "Soil & ecological function",
+   "k": 6,
+   "alpha": 0.824,
+   "omega": 0.825,
+   "AVE": 0.441,
+   "min_loading": 0.594,
+   "max_loading": 0.7
+  },
+  {
+   "dimension": "Governance & management",
+   "k": 6,
+   "alpha": 0.858,
+   "omega": 0.859,
+   "AVE": 0.504,
+   "min_loading": 0.672,
+   "max_loading": 0.769
+  }
+ ],
+ "factor_corr_latent": [
+  [
+   1.0,
+   0.49,
+   0.56,
+   0.48,
+   0.31
+  ],
+  [
+   0.49,
+   1.0,
+   0.65,
+   0.61,
+   0.57
+  ],
+  [
+   0.56,
+   0.65,
+   1.0,
+   0.72,
+   0.66
+  ],
+  [
+   0.48,
+   0.61,
+   0.72,
+   1.0,
+   0.56
+  ],
+  [
+   0.31,
+   0.57,
+   0.66,
+   0.56,
+   1.0
+  ]
+ ],
+ "fornell_larcker_ok": false,
+ "max_latent_corr": 0.72,
+ "index_corr": {
+  "Usage & access": {
+   "Usage & access": 1.0,
+   "Environmental perception": 0.4,
+   "Vegetation & climate awareness": 0.47,
+   "Soil & ecological function": 0.4,
+   "Governance & management": 0.26
+  },
+  "Environmental perception": {
+   "Usage & access": 0.4,
+   "Environmental perception": 1.0,
+   "Vegetation & climate awareness": 0.53,
+   "Soil & ecological function": 0.5,
+   "Governance & management": 0.46
+  },
+  "Vegetation & climate awareness": {
+   "Usage & access": 0.47,
+   "Environmental perception": 0.53,
+   "Vegetation & climate awareness": 1.0,
+   "Soil & ecological function": 0.61,
+   "Governance & management": 0.56
+  },
+  "Soil & ecological function": {
+   "Usage & access": 0.4,
+   "Environmental perception": 0.5,
+   "Vegetation & climate awareness": 0.61,
+   "Soil & ecological function": 1.0,
+   "Governance & management": 0.48
+  },
+  "Governance & management": {
+   "Usage & access": 0.26,
+   "Environmental perception": 0.46,
+   "Vegetation & climate awareness": 0.56,
+   "Soil & ecological function": 0.48,
+   "Governance & management": 1.0
+  }
+ },
+ "n_tests": 36,
+ "n_sig_raw": 7,
+ "n_sig_holm": 2,
+ "sig_holm": [
+  {
+   "factor": "Green-space class",
+   "outcome": "Usage & access",
+   "H": 28.6249,
+   "df": 6,
+   "p": 0.0001,
+   "eps2": 0.0772,
+   "p_holm": 0.0026,
+   "sig_raw": true,
+   "sig_holm": true
+  },
+  {
+   "factor": "Length of residence",
+   "outcome": "Governance & management",
+   "H": 17.8393,
+   "df": 3,
+   "p": 0.0005,
+   "eps2": 0.0501,
+   "p_holm": 0.0166,
+   "sig_raw": true,
+   "sig_holm": true
+  }
+ ],
+ "sig_raw_only": [
+  {
+   "factor": "Green-space class",
+   "outcome": "Environmental perception",
+   "H": 15.9134,
+   "df": 6,
+   "p": 0.0142,
+   "eps2": 0.0338,
+   "p_holm": 0.4552,
+   "sig_raw": true,
+   "sig_holm": false
+  },
+  {
+   "factor": "Length of residence",
+   "outcome": "Vegetation & climate awareness",
+   "H": 10.9287,
+   "df": 3,
+   "p": 0.0121,
+   "eps2": 0.0268,
+   "p_holm": 0.3999,
+   "sig_raw": true,
+   "sig_holm": false
+  },
+  {
+   "factor": "Length of residence",
+   "outcome": "Soil & ecological function",
+   "H": 9.0514,
+   "df": 3,
+   "p": 0.0286,
+   "eps2": 0.0204,
+   "p_holm": 0.8584,
+   "sig_raw": true,
+   "sig_holm": false
+  },
+  {
+   "factor": "Length of residence",
+   "outcome": "GSPI",
+   "H": 12.0937,
+   "df": 3,
+   "p": 0.0071,
+   "eps2": 0.0307,
+   "p_holm": 0.2403,
+   "sig_raw": true,
+   "sig_holm": false
+  },
+  {
+   "factor": "Education",
+   "outcome": "Vegetation & climate awareness",
+   "H": 10.2324,
+   "df": 3,
+   "p": 0.0167,
+   "eps2": 0.0244,
+   "p_holm": 0.5174,
+   "sig_raw": true,
+   "sig_holm": false
+  }
+ ],
+ "posthoc": {
+  "Green-space class->Usage & access": [
+   {
+    "a": 1,
+    "b": 2,
+    "p_holm": 0.0029,
+    "rank_biserial": -0.47
+   },
+   {
+    "a": 1,
+    "b": 4,
+    "p_holm": 0.035,
+    "rank_biserial": -0.43
+   },
+   {
+    "a": 1,
+    "b": 6,
+    "p_holm": 0.0003,
+    "rank_biserial": -0.54
+   },
+   {
+    "a": 1,
+    "b": 7,
+    "p_holm": 0.0195,
+    "rank_biserial": -0.52
+   },
+   {
+    "a": 5,
+    "b": 6,
+    "p_holm": 0.0266,
+    "rank_biserial": -0.48
+   }
+  ],
+  "Length of residence->Governance & management": [
+   {
+    "a": 2,
+    "b": 4,
+    "p_holm": 0.0038,
+    "rank_biserial": -0.34
+   },
+   {
+    "a": 3,
+    "b": 4,
+    "p_holm": 0.0077,
+    "rank_biserial": -0.25
+   }
+  ]
+ },
+ "class_profile": [
+  {
+   "index": "I Urban forest",
+   "n": 30,
+   "Usage & access": 53.2,
+   "Environmental perception": 75.6,
+   "Vegetation & climate awareness": 63.7,
+   "Soil & ecological function": 64.0,
+   "Governance & management": 60.8,
+   "GSPI": 63.5
+  },
+  {
+   "index": "II Managed parks",
+   "n": 84,
+   "Usage & access": 70.2,
+   "Environmental perception": 72.8,
+   "Vegetation & climate awareness": 71.0,
+   "Soil & ecological function": 68.3,
+   "Governance & management": 60.7,
+   "GSPI": 68.6
+  },
+  {
+   "index": "III Institutional",
+   "n": 24,
+   "Usage & access": 64.0,
+   "Environmental perception": 73.3,
+   "Vegetation & climate awareness": 70.8,
+   "Soil & ecological function": 66.1,
+   "Governance & management": 58.2,
+   "GSPI": 66.5
+  },
+  {
+   "index": "IV Lake-riparian",
+   "n": 42,
+   "Usage & access": 67.3,
+   "Environmental perception": 76.8,
+   "Vegetation & climate awareness": 66.4,
+   "Soil & ecological function": 67.3,
+   "Governance & management": 59.3,
+   "GSPI": 67.4
+  },
+  {
+   "index": "V Grassland/scrub",
+   "n": 18,
+   "Usage & access": 55.8,
+   "Environmental perception": 73.8,
+   "Vegetation & climate awareness": 66.2,
+   "Soil & ecological function": 63.7,
+   "Governance & management": 60.4,
+   "GSPI": 64.0
+  },
+  {
+   "index": "VI Neighbourhood",
+   "n": 78,
+   "Usage & access": 72.6,
+   "Environmental perception": 67.9,
+   "Vegetation & climate awareness": 67.1,
+   "Soil & ecological function": 61.4,
+   "Governance & management": 58.4,
+   "GSPI": 65.5
+  },
+  {
+   "index": "VII Avenue",
+   "n": 24,
+   "Usage & access": 71.5,
+   "Environmental perception": 79.7,
+   "Vegetation & climate awareness": 78.6,
+   "Soil & ecological function": 70.5,
+   "Governance & management": 68.2,
+   "GSPI": 73.7
+  }
+ ],
+ "residence_profile": [
+  {
+   "index": "<1 yr",
+   "n": 15,
+   "Usage & access": 67.0,
+   "Environmental perception": 66.1,
+   "Vegetation & climate awareness": 59.7,
+   "Soil & ecological function": 62.5,
+   "Governance & management": 58.1,
+   "GSPI": 62.7
+  },
+  {
+   "index": "1-5 yr",
+   "n": 42,
+   "Usage & access": 67.4,
+   "Environmental perception": 67.9,
+   "Vegetation & climate awareness": 63.1,
+   "Soil & ecological function": 59.2,
+   "Governance & management": 52.3,
+   "GSPI": 62.0
+  },
+  {
+   "index": "6-10 yr",
+   "n": 84,
+   "Usage & access": 68.1,
+   "Environmental perception": 73.7,
+   "Vegetation & climate awareness": 68.8,
+   "Soil & ecological function": 64.9,
+   "Governance & management": 56.2,
+   "GSPI": 66.4
+  },
+  {
+   "index": ">10 yr",
+   "n": 159,
+   "Usage & access": 67.2,
+   "Environmental perception": 74.7,
+   "Vegetation & climate awareness": 71.4,
+   "Soil & ecological function": 68.1,
+   "Governance & management": 64.8,
+   "GSPI": 69.2
+  }
+ ],
+ "gap_overall": {
+  "mean": 7.3,
+  "ci": [
+   5.4,
+   9.3
+  ],
+  "wilcoxon_p": 4.809999579394173e-12,
+  "dz": 0.42,
+  "pct_env_gt_soil": 62.7,
+  "pct_equal": 9.7
+ },
+ "pairwise_dims": {
+  "ENV-GOV": {
+   "mean_diff100": 12.7,
+   "p": 1.5583010261654364e-21
+  },
+  "SOIL-GOV": {
+   "mean_diff100": 5.3,
+   "p": 5.181186889446934e-06
+  },
+  "VEG-SOIL": {
+   "mean_diff100": 3.3,
+   "p": 0.0010750891118110695
+  }
+ },
+ "gap_by_class": [
+  {
+   "class": "I Urban forest",
+   "n": 30,
+   "gap": 11.528,
+   "lo": 5.417,
+   "hi": 17.361,
+   "p_wilcoxon": 0.002,
+   "p_holm": 0.01
+  },
+  {
+   "class": "II Managed parks",
+   "n": 84,
+   "gap": 4.514,
+   "lo": 0.496,
+   "hi": 8.532,
+   "p_wilcoxon": 0.031,
+   "p_holm": 0.062
+  },
+  {
+   "class": "III Institutional",
+   "n": 24,
+   "gap": 7.118,
+   "lo": -0.347,
+   "hi": 14.757,
+   "p_wilcoxon": 0.106,
+   "p_holm": 0.106
+  },
+  {
+   "class": "IV Lake-riparian",
+   "n": 42,
+   "gap": 9.524,
+   "lo": 5.357,
+   "hi": 13.69,
+   "p_wilcoxon": 0.0,
+   "p_holm": 0.002
+  },
+  {
+   "class": "V Grassland/scrub",
+   "n": 18,
+   "gap": 10.185,
+   "lo": 3.704,
+   "hi": 15.972,
+   "p_wilcoxon": 0.016,
+   "p_holm": 0.047
+  },
+  {
+   "class": "VI Neighbourhood",
+   "n": 78,
+   "gap": 6.464,
+   "lo": 2.404,
+   "hi": 10.363,
+   "p_wilcoxon": 0.001,
+   "p_holm": 0.005
+  },
+  {
+   "class": "VII Avenue",
+   "n": 24,
+   "gap": 9.201,
+   "lo": 3.125,
+   "hi": 15.451,
+   "p_wilcoxon": 0.01,
+   "p_holm": 0.042
+  }
+ ],
+ "gap_heterogeneity": {
+  "H": 6.2,
+  "p": 0.4012
+ },
+ "gap_forest_scrub_vs_rest": {
+  "n": [
+   48,
+   252
+  ],
+  "mean": [
+   11.0,
+   6.6
+  ],
+  "p": 0.1247
+ },
+ "ols": {
+  "R2": 0.101,
+  "adjR2": 0.034,
+  "n_sig_raw": 1,
+  "n_sig_holm": 0,
+  "terms_raw_sig": {
+   "C(GreenType_code)[T.7]": {
+    "b": 0.433,
+    "p": 0.0084
+   }
+  }
+ },
+ "sens_gov_core": {
+  "alpha": 0.716,
+  "mean100": 61.0,
+  "residence_H": 17.63,
+  "residence_p": 0.0005253712369740701,
+  "residence_eps2": 0.049
+ },
+ "quality": {
+  "missing": 0,
+  "straightliners": 0,
+  "duplicate_rows": 0,
+  "response_pct": {
+   "1": 1.9,
+   "2": 10.9,
+   "3": 29.0,
+   "4": 33.8,
+   "5": 24.5
+  }
+ }
+}
