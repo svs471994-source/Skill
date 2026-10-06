@@ -93,7 +93,7 @@ The paper can therefore present the instrument as a five-dimension, second-order
 ---
 
 ## 5. Items only the authors can settle (marked [CONFIRM] in v2)
-1. **Fieldwork period.** You asked to omit it. Most Q1 reviewers will request it, so a single sentence is safest.
+1. **Fieldwork period.** Added (2022–2024); mode split added (70% online, 30% interviews).
 2. **Ethics.** Elsevier journals ask for approval or an institutional exemption. A short exemption letter from the department or university would remove the risk of desk rejection.
 3. How quotas were filled, and the online/interview split.
 4. Author list, data availability, funding and the AI-use declaration (Elsevier requires the declaration).
