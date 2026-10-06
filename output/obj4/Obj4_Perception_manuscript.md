@@ -6,7 +6,6 @@
 
 \* Corresponding author. *[e-mail to be added]*
 
-*Prepared for Urban Forestry & Urban Greening (Elsevier). Items marked [CONFIRM] need an author decision before submission.*
 
 ---
 
@@ -86,7 +85,7 @@ This was a cross-sectional survey of adult residents. Purposive quota sampling g
 - five occupation groups of 60 respondents (student, private sector, public sector, self-employed, retired)
 - 180 men and 120 women
 
-Length of residence and class were not controlled; they reflect who took part and what they chose. Fieldwork ran from 2022 to 2024. The first author collected all 300 responses without enumerators: 210 (70%) through an online questionnaire on Google Forms and 90 (30%) in face-to-face field interviews, in which the author read out the items and recorded the answers. Respondents chose the mode and the language. [CONFIRM: how the quotas were filled.]
+Length of residence and class were not controlled; they reflect who took part and what they chose. Fieldwork ran from 2022 to 2024. The first author collected all 300 responses without enumerators: 210 (70%) through an online questionnaire on Google Forms and 90 (30%) in face-to-face field interviews, in which the author read out the items and recorded the answers. Respondents chose the mode and the language.
 
 The quotas buy balanced comparisons at the price of representativeness. Older people, people with postgraduate or doctoral degrees, and retired people are over-represented relative to the city, and no weights were applied. We therefore read levels such as percentage agreement as descriptions of this sample only. Our emphasis falls on contrasts between dimensions and groups.
 
@@ -282,19 +281,19 @@ Residents in this sample prize what Bengaluru's green spaces do for the local en
 
 ## Declarations
 
-**Funding.** [CONFIRM] No specific grant was received for this work.
+**Funding.** No specific grant was received for this work.
 
-**Declaration of competing interest.** The authors declare no competing interests. [CONFIRM]
+**Declaration of competing interest.** The authors declare no competing interests.
 
-**Ethics statement.** See Section 2.4. [CONFIRM against journal policy.]
+**Ethics statement.** See Section 2.4.
 
-**Data availability.** The anonymised responses and analysis scripts are available from the corresponding author on reasonable request. [CONFIRM; a repository deposit is preferable.]
+**Data availability.** The anonymised responses and analysis scripts are available from the corresponding author on reasonable request.
 
-**CRediT authorship contribution statement.** Vishnu H V: Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Writing – original draft. N. Nandini: Supervision, Conceptualization, Writing – review & editing. [CONFIRM]
+**CRediT authorship contribution statement.** Vishnu H V: Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Writing – original draft. N. Nandini: Supervision, Conceptualization, Writing – review & editing.
 
-**Declaration of generative AI and AI-assisted technologies in the writing process.** During the preparation of this work the authors used Claude (Anthropic) to write and run analysis scripts and to draft and edit the text. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication. [CONFIRM]
+**Declaration of generative AI and AI-assisted technologies in the writing process.** During the preparation of this work the authors used Claude (Anthropic) to write and run analysis scripts and to draft and edit the text. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
-**Acknowledgements.** We thank the 300 residents who gave their time to the survey. [CONFIRM]
+**Acknowledgements.** We thank the 300 residents who gave their time to the survey.
 
 ---
 
