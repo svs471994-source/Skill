@@ -147,22 +147,43 @@ box(4,1,92,21.5,'STAGE 5  |  Statistical analysis and indices',
      'Multivariate: Pearson correlation and principal component analysis of nine standardized traits'],T5,C5,'5')
 save(fig,'Fig1_workflow')
 
-# ---------- FIGURE 2: grouped bars, germination ----------
-fig,axs=plt.subplots(2,1,figsize=(7.2,6.4),sharey=True)
-for ax,exp,order,lab_ in [(axs[0],'iso',ISO,'(a) Single isolates'),(axs[1],'con',CON,'(b) Dual-strain consortia')]:
-    G=der[exp]['germ']; x=np.arange(len(order)); w=0.2
-    for j,s in enumerate(S):
-        ax.bar(x+(j-1.5)*w,G[s].values,w*0.9,color=SAL[j],label=f'{s} mM NaCl',zorder=3)
-    ax.set_xticks(x); ax.set_xticklabels(['Uninoculated' if o=='Control' else o for o in order])
-    ax.set_ylabel('Germination (%)'); ax.set_ylim(0,100); ax.yaxis.grid(True,color=GRID,lw=0.6,zorder=0)
-    ax.spines[['top','right']].set_visible(False); ax.text(-0.6,103,lab_,fontsize=10.5,fontweight='bold',ha='left')
-axs[0].legend(ncol=4,loc='upper center',bbox_to_anchor=(0.5,1.25),fontsize=9)
+# ---------- FIGURE 2: dose-response with Wilson 95% CI and GLM statistics in-panel ----------
+import json as _json
+from scipy.stats import norm as _norm
+ST=_json.load(open('stats.json'))
+def wilson(k,n,z=1.96):
+    p=k/n; den=1+z*z/n; c=(p+z*z/(2*n))/den; h=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/den
+    return (c-h)*100,(c+h)*100
+fig,axs=plt.subplots(1,2,figsize=(7.4,4.6),sharey=True)
+CAT=[BLUE,ORANGE,AQUA,YELLOW,MAG,'#4a3aa7']; MK=['s','^','D','v','P','X']
+for ax,exp,order,lab_,key in [(axs[0],'iso',ISO,'(a) Single isolates','iso_germ_glm'),(axs[1],'con',CON,'(b) Dual-strain consortia','con_germ_glm')]:
+    gn=P(exp,'germ_n'); ns=P(exp,'seeds')
+    xs=np.array(S,float)
+    for k,inoc in enumerate(order):
+        c=GRAY if inoc=='Control' else CAT[(k-1)%6]; mk='o' if inoc=='Control' else MK[(k-1)%6]
+        off=(k-(len(order)-1)/2)*2.2
+        y=(gn.loc[inoc,S]/ns.loc[inoc,S]*100).values
+        lo,hi=zip(*[wilson(gn.loc[inoc,s],ns.loc[inoc,s]) for s in S])
+        ax.errorbar(xs+off,y,yerr=[y-np.array(lo),np.array(hi)-y],color=c,marker=mk,ms=4.5,lw=1.3 if inoc!='Control' else 2.2,
+                    ls='-' if inoc!='Control' else '--',capsize=1.5,elinewidth=0.6,mec='white',mew=0.5,label='Uninoculated' if inoc=='Control' else inoc,zorder=3 if inoc=='Control' else 2)
+    g=ST[key]
+    def fp(p): return 'p < 0.001' if p<0.001 else f'p = {p:.3f}'
+    txt=(f"Binomial GLM (LR χ²)\nNaCl: {g['sal']['LR']:.1f}, df {g['sal']['df']}, {fp(g['sal']['p'])}\n"
+         f"Inoculant: {g['inoc']['LR']:.1f}, df {g['inoc']['df']}, {fp(g['inoc']['p'])}\n"
+         f"Interaction: {g['inter']['LR']:.1f}, df {g['inter']['df']}, {fp(g['inter']['p'])}")
+    ax.text(0.03,0.04,txt,transform=ax.transAxes,fontsize=7.2,va='bottom',ha='left',
+            bbox=dict(boxstyle='round,pad=0.35',fc='white',ec='#c3c2b7',lw=0.7))
+    ax.set_xticks(S); ax.set_xlabel('NaCl (mM)'); ax.set_ylim(15,102)
+    ax.yaxis.grid(True,color=GRID,lw=0.6); ax.spines[['top','right']].set_visible(False)
+    ax.set_title(lab_,fontsize=10,fontweight='bold',loc='left')
+    ax.legend(fontsize=7.5,ncol=4,loc='upper center',bbox_to_anchor=(0.5,-0.2),handlelength=1.6,columnspacing=0.8,frameon=False)
+axs[0].set_ylabel('Germination (%) ± 95% CI')
 fig.tight_layout(); save(fig,'Fig2_germination')
 
 # ---------- FIGURE 3: dose-response lines ----------
 series=[('iso','Control','Uninoculated',GRAY,'o','-'),('iso','IS-06','IS-06',BLUE,'s','-'),('iso','IS-05','IS-05',ORANGE,'^','-'),
         ('con','C4-5','C4-5',AQUA,'D','--'),('con','C2-5','C2-5',YELLOW,'v','--')]
-panels=[('chla','Chlorophyll a (mg g$^{-1}$ FW)'),('protein','Soluble protein (µg mL$^{-1}$)'),
+panels=[('chla','Chlorophyll a (mg L$^{-1}$ extract)'),('protein','Soluble protein (µg mL$^{-1}$)'),
         ('sugar','Soluble sugars (µg mL$^{-1}$)'),('root','Root length (cm)')]
 fig,axs=plt.subplots(2,2,figsize=(7.2,6.2))
 for k,(ax,(tr,yl)) in enumerate(zip(axs.flat,panels)):
