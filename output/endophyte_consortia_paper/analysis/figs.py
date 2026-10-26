@@ -154,7 +154,7 @@ ST=_json.load(open('stats.json'))
 def wilson(k,n,z=1.96):
     p=k/n; den=1+z*z/n; c=(p+z*z/(2*n))/den; h=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/den
     return (c-h)*100,(c+h)*100
-fig,axs=plt.subplots(1,2,figsize=(7.4,4.6),sharey=True)
+fig,axs=plt.subplots(1,2,figsize=(7.4,4.3),sharey=True)
 CAT=[BLUE,ORANGE,AQUA,YELLOW,MAG,'#4a3aa7']; MK=['s','^','D','v','P','X']
 for ax,exp,order,lab_,key in [(axs[0],'iso',ISO,'(a) Single isolates','iso_germ_glm'),(axs[1],'con',CON,'(b) Dual-strain consortia','con_germ_glm')]:
     gn=P(exp,'germ_n'); ns=P(exp,'seeds')
@@ -173,10 +173,10 @@ for ax,exp,order,lab_,key in [(axs[0],'iso',ISO,'(a) Single isolates','iso_germ_
          f"Interaction: {g['inter']['LR']:.1f}, df {g['inter']['df']}, {fp(g['inter']['p'])}")
     ax.text(0.03,0.04,txt,transform=ax.transAxes,fontsize=7.2,va='bottom',ha='left',
             bbox=dict(boxstyle='round,pad=0.35',fc='white',ec='#c3c2b7',lw=0.7))
-    ax.set_xticks(S); ax.set_xlabel('NaCl (mM)'); ax.set_ylim(15,102)
+    ax.set_xticks(S); ax.set_xlabel('NaCl (mM)'); ax.set_ylim(15,118); ax.set_yticks(range(20,101,10))
     ax.yaxis.grid(True,color=GRID,lw=0.6); ax.spines[['top','right']].set_visible(False)
     ax.set_title(lab_,fontsize=10,fontweight='bold',loc='left')
-    ax.legend(fontsize=7.5,ncol=4,loc='upper center',bbox_to_anchor=(0.5,-0.2),handlelength=1.6,columnspacing=0.8,frameon=False)
+    ax.legend(fontsize=7.2,ncol=4,loc='upper center',bbox_to_anchor=(0.5,1.0),handlelength=1.5,columnspacing=0.7,frameon=False)
 axs[0].set_ylabel('Germination (%) ± 95% CI')
 fig.tight_layout(); save(fig,'Fig2_germination')
 
