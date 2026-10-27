@@ -1,0 +1,83 @@
+# 2. Materials and methods
+
+## 2.1 Experimental overview
+
+The work ran in five linked stages (Fig. 1): inoculum and consortium preparation, seed bacterization, a laboratory germination assay without salt, a polyhouse pot trial across a graded NaCl series, and leaf biochemistry on the pot-grown plants, followed by univariate, index-based and multivariate analysis.
+
+[[FIG:1]]
+
+## 2.2 Endophytic isolates and consortium preparation
+
+Six endophytic bacterial isolates previously recovered from surface-sterilized tissues of rice plants (IS-01 to IS-06) were grown separately in nutrient broth at 37 ± 1 °C to exponential phase. Five two-member consortia were assembled by mixing equal volumes (1:1, v/v) of the partner cultures: C1-3 (IS-01 + IS-03), C1-5 (IS-01 + IS-05), C2-3 (IS-02 + IS-03), C2-5 (IS-02 + IS-05) and C4-5 (IS-04 + IS-05). Compatibility and purity were checked by quadrant streaking on nutrient agar (37 ± 1 °C, 12–24 h), recording colony morphology, density and any inhibition zone between colony types (Walitang et al., 2017).
+
+## 2.3 Seed sterilization, bacterization and NaCl solutions
+
+Seeds of IR-64, a widely grown but salt-susceptible *indica* cultivar, were surface-sterilized in 95% (v/v) ethanol for 30–60 s and 5% (v/v) sodium hypochlorite for 5–10 min, rinsed two to three times in sterile distilled water and soaked for 30 min in the appropriate bacterial suspension (about 10^{8} CFU mL^{−1}); control seeds were not bacterized. NaCl solutions of 50, 100 and 150 mM (2.922, 5.844 and 8.766 g L^{−1}) were prepared in sterile distilled water, which served as the 0 mM treatment.
+
+## 2.4 Laboratory germination assay
+
+Bacterized seeds (25 per treatment) were placed on moist Whatman No. 1 filter paper in Petri dishes at 25 ± 2 °C and kept moist throughout. A seed was scored as germinated when the radicle reached 2 mm, and root and shoot lengths were measured at the end of the assay. Isolates and consortia were run as separate batches, each with its own control. The seedling vigour index was calculated as SVI = germination (%) × (root + shoot length, cm) (Abdul-Baki & Anderson, 1973).
+
+## 2.5 Polyhouse pot experiment
+
+Pots (15 cm × 18 cm) held 2.5 kg of sterilized soil and cocopeat (1:2, w/w) and were arranged in a completely randomized design with three replicate pots per treatment. The isolate experiment had seven inoculation levels (control, IS-01 to IS-06) and the consortium experiment six (control and the five consortia), each crossed with four NaCl levels (0, 50, 100 and 150 mM); 30 seeds were sown per treatment. Germination was scored as the percentage of sown seeds that produced a seedling, and seedlings were then thinned to three per pot. Salt stress was applied from the two- to three-leaf stage (15 days after sowing, DAS) with 500 mL of the relevant solution on alternate days for 30 days. Plants were harvested at 45 DAS for root and shoot length and leaf biochemistry.
+
+## 2.6 Leaf biochemical assays
+
+All assays used 0.5 g of fresh, fully expanded leaf tissue. Pigments were extracted in 5 mL of dimethyl sulfoxide at 60 °C for 30 min (Hiscox & Israelstam, 1979) and read at 663, 645 and 490 nm. Chlorophyll *a* and *b* were calculated with Arnon's (1949) equations (Chl *a* = 12.7 A_{663} − 2.69 A_{645}; Chl *b* = 22.9 A_{645} − 4.68 A_{663}) and are reported, like carotenoids (Lichtenthaler, 1987), as mg L^{−1} of extract; total chlorophyll is the sum of *a* and *b*. Total phenolics were measured with Folin–Ciocalteu reagent at 765 nm against gallic acid (y = 0.009x + 0.005, R^{2} = 0.9998) (Singleton & Rossi, 1965), soluble protein by the Lowry method at 660 nm against bovine serum albumin (Lowry et al., 1951), and soluble sugars with anthrone at 620 nm against glucose (Yemm & Willis, 1954). DPPH radical scavenging was measured at 517 nm after 30 min in the dark, with ascorbic acid as the reference, as [(A_{0} − A_{1}) / A_{0}] × 100 (Brand-Williams et al., 1995; Gülçin, 2020). Because every extract was prepared from the same tissue mass in the same volume, all biochemical values are expressed per volume of extract and are directly comparable between treatments. Isolate and consortium extracts were assayed in separate batches.
+
+## 2.7 Derived indices
+
+Salinity-induced reduction in uninoculated plants was SIR = (X_{0} − X_{S}) / X_{0} × 100, where X_{0} and X_{S} are values at 0 mM and salinity level S. Inoculation-mediated mitigation compared each inoculant with the control at the same salinity: IMM = (X_{i,S} − X_{c,S}) / X_{c,S} × 100. The retention index was RI = X_{i,150} / X_{i,0} × 100. Relative measures are preferred when treatments differ in their unstressed baseline (Negrão et al., 2017). A composite membership index (CMI) was computed by rescaling nine traits (germination, root length, shoot length, SVI, chlorophyll *a*, carotenoids, soluble protein, soluble sugars and DPPH scavenging) to 0–1 across all 48 treatment combinations as (X − X_{min}) / (X_{max} − X_{min}) and averaging them. Phenolics (incomplete for isolates) and chlorophyll *b* (batch-dependent; Section 3.3) were excluded.
+
+## 2.8 Statistical analysis
+
+Laboratory germination was compared within each batch by a χ^{2} test of independence, with Fisher's exact test for the best inoculant against the control. Pot germination was fitted with a binomial generalized linear model (logit link; factors inoculant and NaCl), and effects were tested by likelihood-ratio (LR) χ^{2} tests between nested models. Continuous traits were analysed by two-way ANOVA (inoculant × NaCl) computed from replicate means and SDs (n = 3) (Larson, 1992), with partial eta-squared (η_{p}^{2}) as effect size and Tukey's HSD at α = 0.05 (Tukey, 1949); traits without recorded replicate SDs (consortium sugars and DPPH) were described only. Pearson correlations among the nine CMI traits were computed across the 48 treatment means (|r| ≥ 0.285 for *p* < 0.05), and principal component analysis (PCA) was run on the z-scored trait matrix (Jolliffe & Cadima, 2016). Analyses used SciPy (Virtanen et al., 2020) and statsmodels (Seabold & Perktold, 2010). Values are means ± SD of three replicates.
+
+# 3. Results
+
+## 3.1 Consortium compatibility and laboratory germination
+
+All five pairings grew as uniform, stable cultures, with no inhibition zones or altered colony forms where partners met; consortium plates also looked denser than single-isolate plates. This shows that the partners can share a plate, not that the strains cooperate within the plant.
+
+In the laboratory assay, germination ranged from 60% to 92% among isolates and 56% to 84% among consortia (Table 1), but the differences were not significant (isolates χ^{2} = 9.40, df = 6, *p* = 0.152; consortia χ^{2} = 7.02, df = 5, *p* = 0.219). Even IS-06 against its control (92% vs. 80%) gave *p* = 0.417. The clear effects were on seedling growth. IS-06 (SVI 1327.8) and IS-04 (1313.2) stood well above the control (920.2), whereas IS-02 and IS-03 fell below it; among the consortia, C4-5 produced the longest roots of the assay (90.66 ± 0.57 mm) and the highest SVI (1271.9).
+
+[[TABLE:1]]
+
+## 3.2 Germination and seedling growth in the polyhouse
+
+Germination declined with increasing NaCl in every treatment (Fig. 2). In uninoculated plants it fell from 83.3% at 0 mM to 60.0% at 150 mM, and the salinity effect was highly significant in both experiments (isolates LR χ^{2} = 34.84, df = 3, *p* < 0.001; consortia LR χ^{2} = 23.15, df = 3, *p* < 0.001). At 150 mM, IS-06 and IS-05 (70.0%) and C4-5 (76.7%) remained above the control, whereas IS-02 (56.7%), IS-03 (53.3%) and C2-3 (50.0%) fell below it. These differences lay within overlapping 95% confidence intervals, and neither the inoculant effect (isolates LR χ^{2} = 11.61, df = 6, *p* = 0.071; consortia LR χ^{2} = 10.40, df = 5, *p* = 0.065) nor the inoculant × NaCl interaction (*p* = 0.999 and 0.835) was significant. The near-parallel dose–response lines in Fig. 2 thus indicate that salt reduced germination to a similar extent irrespective of inoculation.
+
+[[FIG:2]]
+
+Seedling growth responded far more strongly. Uninoculated root and shoot length fell by 52.1% and 39.2% at 150 mM, and SVI by 57.7%. In the isolate experiment, inoculant, salinity and their interaction all affected root length (interaction F_{18,56} = 706.4, *p* < 0.001; HSD 0.21 cm) and shoot length (F_{18,56} = 414.6, *p* < 0.001; Table 3). At 150 mM, IS-06 roots (5.02 ± 0.02 cm) and shoots (28.19 ± 0.26 cm) were 144% and 102% longer than the control. IS-05 matched IS-06 for root length, although its 100 mM root value (1.08 ± 0.08 cm) is an apparent outlier. Consortium effects on root length were also significant (F_{15,48} = 52.2, *p* < 0.001), led by C4-5. Consortium shoot length carried replicate SDs of 8–13 cm in several salt treatments and showed no significant effect (all *p* ≥ 0.39). Under salt, C4-5 kept SVI at 2235–2841, 135% above the control at 150 mM and close to IS-06 (142%; Table 2).
+
+[[TABLE:2]]
+
+## 3.3 Photosynthetic pigments and phenolics
+
+Chlorophyll *a* was the trait hit hardest: in uninoculated plants it fell by 68.8% at 50 mM and 82.8% at 150 mM (Fig. 3a). Inoculation held it up at every salt level (isolate interaction F_{18,56} = 792.0, *p* < 0.001). IS-06 was the most effective isolate, 188–240% above the matched control across 50–150 mM, with IS-05, IS-04 and IS-01 roughly doubling chlorophyll *a* at 150 mM. C4-5 (IMM 184%) and C2-5 (129%) protected chlorophyll *a*, whereas C1-3, C1-5 and C2-3 fell below the control at every salt level (Fig. 4). Carotenoids followed the same pattern; at 150 mM, IS-06 nearly doubled them and C4-5 raised them by 167%. Chlorophyll *b* of inoculated consortium treatments (0.01–3.99 mg L^{−1}) was an order of magnitude below the isolate batch even at 0 mM, which points to a batch difference in extraction or reading; it is therefore compared only within batches.
+
+Salinity cut phenolics of uninoculated leaves by 70.1% at 150 mM. In the consortium experiment (interaction F_{15,48} = 430.1, *p* < 0.001), C4-5 gave the highest values at every salt level, 153–184% above the matched control, while C1-3 matched the control at 150 mM. Among the isolates, for which only part of the phenolic data were available, IS-06 kept 3.4 times the control level at 150 mM, whereas IS-01 dropped to 2.80 µg mL^{−1}, the lowest value recorded.
+
+## 3.4 Soluble protein, soluble sugars and DPPH activity
+
+Soluble protein fell from 215.15 to 85.39 µg mL^{−1} as salt rose (Fig. 3b), and every inoculant slowed the decline. The isolate ranking was the same at every salinity level (IS-06 > IS-05 > IS-04 > IS-03 > IS-02 > IS-01), but the consortia did better: C4-5 held 181.51 µg mL^{−1} at 150 mM (IMM 113%), the highest of any stressed treatment, and retained 80.8% of its unstressed protein, against 75.4% for C2-5, 69.6% for IS-06 and 39.7% for the control. Soluble sugars fell further (SIR 67.5%), and here the isolates were stronger (Fig. 3c): IS-06 retained 89.2% of its unstressed sugar (IMM 169% at 150 mM), while C4-5 led the consortia (IMM 120%). Protein and sugar moved together across treatments (r = 0.89).
+
+DPPH scavenging was less consistent. Uninoculated activity was not monotonic with salt (90%, 65%, 82% and 70% across 0–150 mM), and the unstressed control differed between batches (90% vs. 70.6%). Under salt, IS-06 (88%) and C4-5 (84.6%) gave the highest activity at 150 mM (isolate interaction F_{18,56} = 76.7, *p* < 0.001). DPPH was unrelated to protein and sugars (|r| ≤ 0.04).
+
+[[FIG:3]]
+
+## 3.5 Mitigation profile, composite ranking and multivariate structure
+
+Across the mitigation heat map (Fig. 4), protein and sugars were raised by every inoculant at every salinity level, pigment protection split the consortia into protective (C4-5, C2-5) and harmful (C1-3, C1-5, C2-3) pairs, and benefits grew with stress (IS-06 chlorophyll *a*: IMM 188% at 50 mM to 240% at 150 mM). The CMI ranked IS-06 (0.647) and C4-5 (0.617) first at 150 mM, followed by IS-05 (0.534) and C2-5 (0.482); the control was last (0.139). Averaged across salinity levels, C2-3 (0.427) and C1-3 (0.384) fell below the control (0.439). The two leaders recovered the unstressed profile in different ways (Fig. 5): IS-06 on root and shoot length, chlorophyll *a*, sugars and DPPH, and C4-5 on germination, carotenoids and protein.
+
+[[FIG:4]]
+
+[[FIG:5]]
+
+The first two principal components explained 71.3% of the variance (Fig. 6). PC1 (51.7%) loaded positively on every trait, most strongly SVI (0.91), chlorophyll *a* (0.84) and germination (0.82), and represents general seedling health. PC2 (19.6%) separated protein and sugars from DPPH and root and shoot length. Uninoculated plants moved steadily to negative PC1 with salt, whereas IS-06 stayed on the positive side at every salinity level, and IS-06 at 150 mM scored higher than the control at 50 mM.
+
+[[FIG:6]]
+
+[[TABLE:3]]
