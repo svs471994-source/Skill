@@ -324,7 +324,7 @@ heading(doc, 'References', 1)
 for r in R:
     au, yr, ti, jo, vo, iss, pg, doi, _ = r
     p = doc.add_paragraph()
-    add_rich(p, f'{au} ({yr}). {ti}. ')
+    add_rich(p, f'{au} ({yr}). {ti}' + ('' if ti.endswith('.') else '.') + ' ')
     jv = f'<i>{jo}</i>'
     if vo: jv += f', <i>{vo}</i>'
     if iss: jv += f'({iss})'
